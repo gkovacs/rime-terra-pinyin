@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp ./*.yaml ~/Library/Rime/
+cp ./*.yaml ~/.config/fcitx/rime/
 # you will also have to edit default.yaml
 # add to schema_list
 # - schema: td_pinyin_flypy
