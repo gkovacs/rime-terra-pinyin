@@ -46,7 +46,7 @@ engine:
     - reverse_lookup_translator
     - script_translator
   filters:
-    - reverse_lookup_filter
+    #- reverse_lookup_filter
     - simplifier
     - uniquifier
 
@@ -94,6 +94,7 @@ speller:
 
 translator:
   dictionary: terra_pinyin
+  spelling_hints: 5  # ～字以內候選標註完整帶調拼音
   prism: td_pinyin_flypy
   preedit_format:
     - xform/([bpmfdtnljqx])n/$1iao/
