@@ -25,6 +25,14 @@ switches:
   - name: ascii_punct
     states: [ 。，, ．， ]
 
+custom_phrase:
+  db_class: stabledb
+  dictionary: ""
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: 1
+  user_dict: custom_phrase
+
 engine:
   processors:
     - ascii_composer
@@ -43,6 +51,7 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
+    - "table_translator@custom_phrase"
     - reverse_lookup_translator
     - script_translator
   filters:
@@ -93,7 +102,7 @@ speller:
     - 'derive/^(.*)\\$/$1>/'
 
 translator:
-  dictionary: terra_pinyin
+  dictionary: terra_pinyin.extended
   spelling_hints: 5  # ～字以內候選標註完整帶調拼音
   prism: td_pinyin_flypy
   preedit_format:
